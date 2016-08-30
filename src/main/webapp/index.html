@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Message</title>
+<link href="bootstrap/css/bootstrap.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/avalon/avalon.js"></script>
+<script type="text/javascipt" src="bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/message/message.js"></script>
+</head>
+<body style="align: center;">
+	<div ms-controller="message">
+		<div>
+			<div style="text-align: center;">
+				<h1>日志信息</h1>
+			</div>
+			<!-- <table class="table">
+	 				<thead>
+	 					<tr>
+	 						<th>id</th>
+	 						<th>消息</th>
+	 						<th>时间</th>
+	 					</tr>
+	 				</thead>
+	 				<tbody>
+	 					<tr ms-repeat="messageList">
+							<td>{{el.id}}</td>
+							<td>{{el.message}}</td>
+							<td>{{el.time}}</td>
+						</tr>
+					</tbody>
+	 				</table> -->
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>内容</th>
+						<th>时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="success" ms-repeat="messageList">
+						<td>{{el.id}}</td>
+						<td>{{el.message}}</td>
+						<td>{{el.time}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

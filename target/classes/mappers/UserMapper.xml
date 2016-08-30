@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.uuu.IDao.UserMapper">
+	<resultMap type="com.cn.uuu.pojo.User" id="user">
+		<id column="userNo" property="userNo" />
+		<result column="sex" property="sex" />
+		<result column="nickName" property="userName" />
+		<result column="password" property="password" />
+		<result column="userType" property="userType" />
+		<result column="fullName" property="fullName" />
+		<result column="memo" property="memo" />
+		<result column="createDate" property="createDate" />
+		<result column="updateDate" property="updateDate" />
+	</resultMap>
+
+	<insert id="saveUser" parameterType="com.cn.uuu.pojo.User">
+		<!-- 插入数据后获取userNo -->
+		<selectKey keyProperty="userNo" order="BEFORE" resultType="java.lang.String">
+			SELECT UUID()
+		</selectKey>
+		INSERT INTO
+		`user`(`userNo`,`sex`,`nickName`,`password`,`userType`,`fullName`,`memo`,`createDate`,`updateDate`)
+		VALUES
+		(#{userNo},#{sex},#{userName},#{password},#{userType},#{fullName},#{memo},#{createDate},#{updateDate})
+	</insert>
+
+	<select id="findUser" parameterType="com.cn.uuu.pojo.User" resultMap="com.cn.uuu.pojo.User">
+		SELECT `sex`,`nickName`,`fullName`,`memo`,`createDate` FROM `user`
+		WHERE
+		  <if test="userNo!=null">
+			  `userNo`=#{userNo},
+		  </if>
+		  <if test="sex!=null">
+			  `sex`=#{sex},
+		  </if>
+		  <if test="nickName!=null">
+			  `nickName`=#{nickName},
+		  </if>
+		  <if test="userType!=null">
+			  `userType`=#{userType},
+		  </if>
+		  <if test="fullName!=null">
+			  `fullName`=#{fullName},
+		  </if>
+		  <if test="memo!=null">
+			  `memo`=#{memo},
+		  </if>
+		  <if test="createDate!=null">
+			  `createDate`=#{createDate},
+		  </if>
+		  <if test="updateDate!=null">
+			  `updateDate`=#{updateDate}
+		  </if>
+	</select>
+</mapper>
