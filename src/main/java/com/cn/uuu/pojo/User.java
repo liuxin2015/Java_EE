@@ -1,9 +1,11 @@
 package com.cn.uuu.pojo;
 
+import com.cn.uuu.reflect.ReflectInterface;
+
 import java.io.Serializable;
 import java.sql.Date;
 
-public class User implements Serializable {
+public class User implements ReflectInterface,Serializable {
     /**
      *
      */
@@ -152,5 +154,13 @@ public class User implements Serializable {
      */
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
+    }
+
+    public void print(){
+        System.out.println("打印");
+    }
+
+    public void say() {
+        System.out.println("Hello User");
     }
 }
