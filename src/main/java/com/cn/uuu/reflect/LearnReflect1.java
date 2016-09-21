@@ -1,7 +1,6 @@
 package com.cn.uuu.reflect;
 
 import com.cn.uuu.pojo.Message;
-import com.cn.uuu.pojo.User;
 import com.mysql.jdbc.StringUtils;
 
 /**
@@ -17,7 +16,7 @@ public class LearnReflect1 {
                 Class aClass=Class.forName(classForName);
                 ReflectInterface inter=(ReflectInterface) aClass.newInstance();
                 if (inter != null) {
-                 inter.say();
+                 inter.say("111");
                 }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

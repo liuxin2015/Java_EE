@@ -160,7 +160,7 @@ public class User implements ReflectInterface,Serializable {
         System.out.println("打印");
     }
 
-    public void say() {
-        System.out.println("Hello User");
+    public void say(String info) {
+        System.out.println("Hello User"+info);
     }
 }

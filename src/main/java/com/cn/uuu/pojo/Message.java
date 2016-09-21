@@ -35,7 +35,7 @@ public class Message implements ReflectInterface{
 		System.out.println("SPring");
 	}
 
-	public void say() {
-		System.out.println("Hello Message");
+	public void say(String info) {
+		System.out.println("Hello Message"+info);
 	}
 }
