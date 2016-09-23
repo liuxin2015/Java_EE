@@ -30,6 +30,5 @@ public class LearnReflect {
         }
 
         System.out.println(class1==class2);
-        user.print();
     }
 }

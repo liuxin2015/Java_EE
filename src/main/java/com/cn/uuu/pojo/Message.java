@@ -1,8 +1,6 @@
 package com.cn.uuu.pojo;
 
-import com.cn.uuu.reflect.ReflectInterface;
-
-public class Message implements ReflectInterface{
+public class Message{
 	private Integer id;
 	private String message;
 	private String time;
@@ -33,9 +31,5 @@ public class Message implements ReflectInterface{
 
 	public void sPrint(){
 		System.out.println("SPring");
-	}
-
-	public void say(String info) {
-		System.out.println("Hello Message"+info);
 	}
 }
